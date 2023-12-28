@@ -1,0 +1,43 @@
+#!/usr/bin/env sh
+
+# shellcheck disable=SC2140
+DATE=$(date +%d" "%B" "%Y)
+DAY=$(date +"%u")
+OUT="# Tagebuch für den $DATE"
+DAY_OUT=""
+
+# Monday only
+if [ "$DAY" -eq "1" ];then
+   DAY_OUT="- [ ] TimeTable (SNOW) ausfüllen"
+fi
+
+if [ "${DAY}" -ge 1 ] && [ "${DAY}" -le 5 ];then
+   # shellcheck disable=SC2116
+   OUT=$(echo "$OUT
+
+## Arbeit
+
+- [ ] Einstempeln
+- [ ] Emails lesen
+- [ ] Pause machen
+$(grep -E "\- \[ \]" "/home/murdoc/ownCloud/vimwiki/work/WorkTodo.md")\
+- [ ] Ausstempeln
+$(echo "$DAY_OUT")
+")
+fi
+
+# shellcheck disable=SC2116
+OUT=$(echo "$OUT
+
+## Privat
+
+$(grep -E "\- \[ \]" "/home/murdoc/ownCloud/vimwiki/private/PrivateTodo.md")
+
+## Notizen
+
+## Aufgaben aus anderen Tagebuch-Einträgen
+
+$(grep -Er "\- \[ \]" "/home/murdoc/ownCloud/vimwiki/diary/" |awk -F: ' { print $2 }')
+")
+
+echo "$OUT"
