@@ -16,3 +16,4 @@
 --   end,
 -- })
 require "custom.autocmds"
+require "custom.mappings"
