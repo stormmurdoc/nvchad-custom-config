@@ -170,3 +170,15 @@ vim.cmd [[
 vim.cmd [[
   autocmd BufWritePre * %s/\s\+$//e
 ]]
+
+
+-- move visual block vertically
+vim.cmd [[
+  xnoremap J :m '>+1<CR>gv=gv
+  xnoremap K :m '<-2<CR>gv=gv
+]]
+
+-- fast replace strings
+vim.cmd [[
+  nmap <leader>r :%s/<C-r><C-w>//gc<Left><Left><Left>
+]]

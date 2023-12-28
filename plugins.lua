@@ -75,6 +75,18 @@ local plugins = {
     end
   },
 
+  {
+    "rderik/vim-markdown-toc",
+    branch = "add-anchors-to-headings/drc2r",
+    lazy=false,
+    init = function()
+      -- Vim markdown Table of Contents
+      vim.g.vmt_insert_anchors = 1
+      vim.g.vmt_auto_update_on_save = 1
+    end,
+
+  },
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
