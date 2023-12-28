@@ -137,6 +137,6 @@ opt.completeopt = { "menu", "menuone", "noselect" }
 -- end
 
 -- set color column
-vim.cmd [[
-  set colorcolumn=80
-]]
+-- vim.cmd [[
+--   set colorcolumn=80
+-- ]]
