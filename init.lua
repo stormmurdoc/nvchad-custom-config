@@ -18,3 +18,4 @@
 require "custom.autocmds"
 require "custom.mappings"
 require "custom.abbreviations"
+require "custom.options"

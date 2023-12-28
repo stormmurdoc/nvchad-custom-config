@@ -47,7 +47,9 @@ local plugins = {
     end,
   },
 
-  -- vimwiki
+ ----------------------------- custom plugins ---------------------------------
+
+ -- vimwiki
   {
     "vimwiki/vimwiki",
     lazy=false,
@@ -59,7 +61,10 @@ local plugins = {
             ext = '.md',
             },
         }
-        vim.g.vimwiki_ext2syntax = { ['.md'] = 'markdown', ['.markdown'] = 'markdown', ['.mdown'] = 'markdown' }
+        vim.g.vimwiki_ext2syntax = {
+          ['.md'] = 'markdown',
+          ['.markdown'] = 'markdown',
+          ['.mdown'] = 'markdown' }
         vim.g.vimwiki_use_mouse = 1
         vim.g.vimwiki_markdown_link_ext = 1
     end,
@@ -87,6 +92,11 @@ local plugins = {
 
   },
 
+  {
+    "stsewd/gx-extended.vim",
+    lazy=true,
+  }
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
@@ -94,8 +104,11 @@ local plugins = {
   -- },
 
   -- All NvChad plugins are lazy-loaded by default
-  -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
-  -- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
+  -- For a plugin to be loaded, you will need to set either `ft`, `cmd`,
+  -- `keys`, `event`, or set `lazy = false`
+  --
+  -- If you want a plugin to load on startup, add `lazy = false`
+  -- to a plugin spec, for example
   -- {
   --   "mg979/vim-visual-multi",
   --   lazy = false,
