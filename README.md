@@ -61,3 +61,4 @@ $HOME\AppData\Local\nvim\lua\custom --depth 1 && nvim
 - [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
 - [Comment.nvim](https://github.com/numToStr/Comment.nvim)
 - [mason.nvim](https://github.com/williamboman/mason.nvim)
+- [https://github.com/sar/friendly-snippets.nvim](https://github.com/sar/friendly-snippets.nvim)

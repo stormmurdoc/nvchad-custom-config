@@ -127,6 +127,14 @@ autocmd("FileType", {
   end,
 })
 
+-- terraform
+autocmd("FileType", {
+  pattern = "tf",
+  callback = function()
+    opt.filetype = "terraform"
+  end,
+})
+
 -- automatic perform a shellcheck if a shell scrippt is written
 vim.cmd [[
    autocmd FileType sh autocmd BufWritePre <buffer> ! shellcheck %
