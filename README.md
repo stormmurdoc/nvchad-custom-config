@@ -6,7 +6,7 @@ Do check the [https://github.com/NvChad/nvcommunity
 
 ## Table of Content
 
-[TOC]
+[toc]
 
 ## Installation
 
