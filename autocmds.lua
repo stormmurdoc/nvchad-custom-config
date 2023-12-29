@@ -220,3 +220,15 @@ vim.cmd [[
 vim.cmd [[
   nmap <leader>r :%s/<C-r><C-w>//gc<Left><Left><Left>
 ]]
+
+-- vimwiki au group
+
+vim.cmd [[
+  augroup vimwikigroup
+   autocmd!
+   " automatically update links on read diary
+   autocmd BufRead,BufNewFile ~/ownCloud/vimwiki/diary/diary.md VimwikiDiaryGenerateLinks
+  augroup end
+
+  au BufNewFile ~/ownCloud/vimwiki/diary/*.md :silent 0r !~/.config/vim/bin/generate-vimwiki-diary-template '%'
+]]
