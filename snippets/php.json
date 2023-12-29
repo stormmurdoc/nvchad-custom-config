@@ -1,16 +1,25 @@
 {
-  "class …": {
-    "prefix": "class",
-    "body": [
-      "class ${1:ClassName} ${2:extends ${3:AnotherClass}} ${4:implements ${5:Interface}} {",
-      "\t$0",
-      "}",
-      ""
-    ],
-    "description": "Class definition"
+  "$this->\u2026": {
+    "body": "\\$this->$0;",
+    "description": "$this->...",
+    "prefix": "this"
   },
-  "PHPDoc class …": {
-    "prefix": "doc_class",
+  "$\u2026 = ( \u2026 ) ? \u2026 : \u2026": {
+    "body": "\\$${1:retVal} = (${2:condition}) ? ${3:a} : ${4:b} ;",
+    "description": "Ternary conditional assignment",
+    "prefix": "if?"
+  },
+  "$\u2026 = [\u2026]": {
+    "body": "\\$${1:arrayName} = ['$2' => $3${4:,} $0];",
+    "description": "Array initializer",
+    "prefix": "shorray"
+  },
+  "$\u2026 = array (\u2026)": {
+    "body": "\\$${1:arrayName} = array('$2' => $3${4:,} $0);",
+    "description": "Array initializer",
+    "prefix": "array"
+  },
+  "PHPDoc class \u2026": {
     "body": [
       "/**",
       " * ${6:undocumented class}",
@@ -20,26 +29,10 @@
       "}",
       ""
     ],
-    "description": "Documented Class Declaration"
+    "description": "Documented Class Declaration",
+    "prefix": "doc_class"
   },
-  "function __construct": {
-    "prefix": "con",
-    "body": [
-      "${1:public} function __construct(${2:${3:Type} \\$${4:var}${5: = ${6:null}}}) {",
-      "\t\\$this->${4:var} = \\$${4:var};$0",
-      "}"
-    ]
-  },
-  "PHPDoc property": {
-    "prefix": "doc_v",
-    "body": [
-      "/** @var ${1:Type} \\$${2:var} ${3:description} */",
-      "${4:protected} \\$${2:var}${5: = ${6:null}};$0"
-    ],
-    "description": "Documented Class Variable"
-  },
-  "PHPDoc function …": {
-    "prefix": "doc_f",
+  "PHPDoc function \u2026": {
     "body": [
       "/**",
       " * ${1:undocumented function summary}",
@@ -54,62 +47,161 @@
       "\t${0:# code...}",
       "}"
     ],
-    "description": "Documented function"
+    "description": "Documented function",
+    "prefix": "doc_f"
   },
-  "PHPDoc param …": {
-    "prefix": "param",
-    "body": ["* @param ${1:Type} ${2:var} ${3:Description}$0"],
-    "description": "Paramater documentation"
-  },
-  "function …": {
-    "prefix": "fun",
+  "PHPDoc param \u2026": {
     "body": [
-      "${1:public }function ${2:FunctionName}(${3:${4:${5:Type} }\\$${6:var}${7: = ${8:null}}}) {",
-      "\t${0:# code...}",
+      "* @param ${1:Type} ${2:var} ${3:Description}$0"
+    ],
+    "description": "Paramater documentation",
+    "prefix": "param"
+  },
+  "PHPDoc property": {
+    "body": [
+      "/** @var ${1:Type} \\$${2:var} ${3:description} */",
+      "${4:protected} \\$${2:var}${5: = ${6:null}};$0"
+    ],
+    "description": "Documented Class Variable",
+    "prefix": "doc_v"
+  },
+  "Region End": {
+    "body": [
+      "#endregion"
+    ],
+    "description": "Folding Region End",
+    "prefix": "#endregion"
+  },
+  "Region Start": {
+    "body": [
+      "#region"
+    ],
+    "description": "Folding Region Start",
+    "prefix": "#region"
+  },
+  "Throw Exception": {
+    "body": [
+      "throw new $1Exception(${2:\"${3:Error Processing Request}\"}${4:, ${5:1}});",
+      "$0"
+    ],
+    "description": "Throw exception",
+    "prefix": "throw"
+  },
+  "Try Catch Block": {
+    "body": [
+      "try {",
+      "\t${1://code...}",
+      "} catch (${2:\\Throwable} ${3:\\$th}) {",
+      "\t${4://throw \\$th;}",
       "}"
     ],
-    "description": "Function"
+    "description": "Try catch block",
+    "prefix": "try"
   },
-  "trait …": {
-    "prefix": "trait",
+  "case \u2026": {
     "body": [
-      "/**",
-      " * $1",
-      " */",
-      "trait ${2:TraitName}",
-      "{",
+      "case '${1:value}':",
+      "\t${0:# code...}",
+      "\tbreak;"
+    ],
+    "description": "Case Block",
+    "prefix": "case"
+  },
+  "class \u2026": {
+    "body": [
+      "class ${1:ClassName} ${2:extends ${3:AnotherClass}} ${4:implements ${5:Interface}} {",
       "\t$0",
       "}",
       ""
     ],
-    "description": "Trait"
+    "description": "Class definition",
+    "prefix": "class"
   },
-  "define(…, …)": {
-    "prefix": "def",
-    "body": ["define('$1', ${2:'$3'});", "$0"],
-    "description": "Definition"
+  "define(\u2026, \u2026)": {
+    "body": [
+      "define('$1', ${2:'$3'});",
+      "$0"
+    ],
+    "description": "Definition",
+    "prefix": "def"
   },
-  "do … while …": {
-    "prefix": "do",
+  "do \u2026 while \u2026": {
     "body": [
       "do {",
       "\t${0:# code...}",
       "} while (${1:\\$${2:a} <= ${3:10}});"
     ],
-    "description": "Do-While loop"
+    "description": "Do-While loop",
+    "prefix": "do"
   },
-  "while …": {
-    "prefix": "while",
-    "body": ["while (${1:\\$${2:a} <= ${3:10}}) {", "\t${0:# code...}", "}"],
-    "description": "While-loop"
+  "echo $this->\u2026": {
+    "body": "echo \\$this->$0;",
+    "description": "Echo this",
+    "prefix": "ethis"
   },
-  "if …": {
-    "prefix": "if",
-    "body": ["if (${1:condition}) {", "\t${0:# code...}", "}"],
-    "description": "If block"
+  "else \u2026": {
+    "body": [
+      "else {",
+      "\t${0:# code...}",
+      "}"
+    ],
+    "description": "Else block",
+    "prefix": "else"
   },
-  "if … else …": {
-    "prefix": "ifelse",
+  "elseif \u2026": {
+    "body": [
+      "elseif (${1:condition}) {",
+      "\t${0:# code...}",
+      "}"
+    ],
+    "description": "Elseif block",
+    "prefix": "elseif"
+  },
+  "for \u2026": {
+    "body": [
+      "for (\\$${1:i}=${2:0}; \\$${1:i} < $3; \\$${1:i}++) { ",
+      "\t${0:# code...}",
+      "}"
+    ],
+    "description": "For-loop",
+    "prefix": "for"
+  },
+  "foreach \u2026": {
+    "body": [
+      "foreach (\\$${1:variable} as \\$${2:key} ${3:=> \\$${4:value}}) {",
+      "\t${0:# code...}",
+      "}"
+    ],
+    "description": "Foreach loop",
+    "prefix": "foreach"
+  },
+  "function __construct": {
+    "body": [
+      "${1:public} function __construct(${2:${3:Type} \\$${4:var}${5: = ${6:null}}}) {",
+      "\t\\$this->${4:var} = \\$${4:var};$0",
+      "}"
+    ],
+    "prefix": "con"
+  },
+  "function \u2026": {
+    "body": [
+      "${1:public }function ${2:FunctionName}(${3:${4:${5:Type} }\\$${6:var}${7: = ${8:null}}}) {",
+      "\t${0:# code...}",
+      "}"
+    ],
+    "description": "Function",
+    "prefix": "fun"
+  },
+  "if \u2026": {
+    "body": [
+      "if (${1:condition}) {",
+      "\t${0:# code...}",
+      "}"
+    ],
+    "description": "If block",
+    "prefix": "if"
+  },
+  "if \u2026 else \u2026": {
     "body": [
       "if (${1:condition}) {",
       "\t${2:# code...}",
@@ -118,58 +210,10 @@
       "}",
       "$0"
     ],
-    "description": "If Else block"
+    "description": "If Else block",
+    "prefix": "ifelse"
   },
-  "$… = ( … ) ? … : …": {
-    "prefix": "if?",
-    "body": "\\$${1:retVal} = (${2:condition}) ? ${3:a} : ${4:b} ;",
-    "description": "Ternary conditional assignment"
-  },
-  "else …": {
-    "prefix": "else",
-    "body": ["else {", "\t${0:# code...}", "}"],
-    "description": "Else block"
-  },
-  "elseif …": {
-    "prefix": "elseif",
-    "body": ["elseif (${1:condition}) {", "\t${0:# code...}", "}"],
-    "description": "Elseif block"
-  },
-  "for …": {
-    "prefix": "for",
-    "body": [
-      "for (\\$${1:i}=${2:0}; \\$${1:i} < $3; \\$${1:i}++) { ",
-      "\t${0:# code...}",
-      "}"
-    ],
-    "description": "For-loop"
-  },
-  "foreach …": {
-    "prefix": "foreach",
-    "body": [
-      "foreach (\\$${1:variable} as \\$${2:key} ${3:=> \\$${4:value}}) {",
-      "\t${0:# code...}",
-      "}"
-    ],
-    "description": "Foreach loop"
-  },
-  "$… = array (…)": {
-    "prefix": "array",
-    "body": "\\$${1:arrayName} = array('$2' => $3${4:,} $0);",
-    "description": "Array initializer"
-  },
-  "$… = […]": {
-    "prefix": "shorray",
-    "body": "\\$${1:arrayName} = ['$2' => $3${4:,} $0];",
-    "description": "Array initializer"
-  },
-  "… => …": {
-    "prefix": "keyval",
-    "body": "'$1' => $2${3:,} $0",
-    "description": "Key-Value initializer"
-  },
-  "switch …": {
-    "prefix": "switch",
+  "switch \u2026": {
     "body": [
       "switch (\\$${1:variable}) {",
       "\tcase '${2:value}':",
@@ -181,50 +225,35 @@
       "\t\tbreak;",
       "}"
     ],
-    "description": "Switch block"
+    "description": "Switch block",
+    "prefix": "switch"
   },
-  "case …": {
-    "prefix": "case",
-    "body": ["case '${1:value}':", "\t${0:# code...}", "\tbreak;"],
-    "description": "Case Block"
-  },
-  "$this->…": {
-    "prefix": "this",
-    "body": "\\$this->$0;",
-    "description": "$this->..."
-  },
-  "echo $this->…": {
-    "prefix": "ethis",
-    "body": "echo \\$this->$0;",
-    "description": "Echo this"
-  },
-  "Throw Exception": {
-    "prefix": "throw",
+  "trait \u2026": {
     "body": [
-      "throw new $1Exception(${2:\"${3:Error Processing Request}\"}${4:, ${5:1}});",
-      "$0"
+      "/**",
+      " * $1",
+      " */",
+      "trait ${2:TraitName}",
+      "{",
+      "\t$0",
+      "}",
+      ""
     ],
-    "description": "Throw exception"
+    "description": "Trait",
+    "prefix": "trait"
   },
-  "Region Start": {
-    "prefix": "#region",
-    "body": ["#region"],
-    "description": "Folding Region Start"
-  },
-  "Region End": {
-    "prefix": "#endregion",
-    "body": ["#endregion"],
-    "description": "Folding Region End"
-  },
-  "Try Catch Block": {
-    "prefix": "try",
+  "while \u2026": {
     "body": [
-      "try {",
-      "\t${1://code...}",
-      "} catch (${2:\\Throwable} ${3:\\$th}) {",
-      "\t${4://throw \\$th;}",
+      "while (${1:\\$${2:a} <= ${3:10}}) {",
+      "\t${0:# code...}",
       "}"
     ],
-    "description": "Try catch block"
+    "description": "While-loop",
+    "prefix": "while"
+  },
+  "\u2026 => \u2026": {
+    "body": "'$1' => $2${3:,} $0",
+    "description": "Key-Value initializer",
+    "prefix": "keyval"
   }
 }
