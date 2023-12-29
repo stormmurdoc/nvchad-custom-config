@@ -139,7 +139,7 @@ autocmd("FileType", {
 autocmd("FileType", {
   pattern = "j2",
   callback = function()
-    opt.filetype = "ansible_template"
+    opt.filetype = "yaml.ansible"
   end,
 })
 
@@ -147,7 +147,7 @@ autocmd("FileType", {
 autocmd("FileType", {
   pattern = "hosts",
   callback = function()
-    opt.filetype = "ansible_hosts"
+    opt.filetype = "yaml.ansible"
   end,
 })
 
@@ -155,7 +155,7 @@ autocmd("FileType", {
 autocmd("FileType", {
   pattern = "*/workspace/git/ansible/(*.yml,*yaml,*/{group,host}_vars/*)",
   callback = function()
-    opt.filetype = "ansible"
+    opt.filetype = "yaml.ansible"
   end,
 })
 

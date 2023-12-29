@@ -24,6 +24,7 @@ M.treesitter = {
 M.mason = {
   ensure_installed = {
     "ansible-lint",
+    "ansiblels",
     "bash-language-server",
     "clang-format",
     "clangd",
