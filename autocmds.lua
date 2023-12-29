@@ -135,6 +135,32 @@ autocmd("FileType", {
   end,
 })
 
+-- ansible template
+autocmd("FileType", {
+  pattern = "j2",
+  callback = function()
+    opt.filetype = "ansible_template"
+  end,
+})
+
+-- ansible hosts
+autocmd("FileType", {
+  pattern = "hosts",
+  callback = function()
+    opt.filetype = "ansible_hosts"
+  end,
+})
+
+-- ansible yamls
+autocmd("FileType", {
+  pattern = "*/workspace/git/ansible/(*.yml,*yaml,*/{group,host}_vars/*)",
+  callback = function()
+    opt.filetype = "ansible"
+  end,
+})
+
+
+
 -- automatic perform a shellcheck if a shell scrippt is written
 vim.cmd [[
    autocmd FileType sh autocmd BufWritePre <buffer> ! shellcheck %
