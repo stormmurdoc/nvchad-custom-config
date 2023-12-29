@@ -1,17 +1,45 @@
 # NvChad Custom Config
 
+This can be used as an example custom config for NvChad.
+Do check the [https://github.com/NvChad/nvcommunity
+](https://github.com/NvChad/nvcommunity)
+
 ## Table of Content
 
-<!-- vim-markdown-toc -->
+[TOC]
 
-* [Links / Plugins](#links-plugins)
+## Installation
 
-<!-- vim-markdown-toc -->
+First make a backup of your nvim config.
 
-This can be used as an example custom config for NvChad.
-Do check the [https://github.com/NvChad/nvcommunity](https://github.com/NvChad/nvcommunity)
+```shell
+# Linux / Macos (unix)
+rm -rf ~/.config/nvim
+rm -rf ~/.local/share/nvim
+rm -rf ~/.cache/nvim/
 
-## Links / Plugins
+# Windows
+rd -r ~\AppData\Local\nvim
+rd -r ~\AppData\Local\nvim-data
+```
+
+For linux/macos:
+
+```shell
+git clone https://github.com/NvChad/NvChad ~/.config/nvim \
+--depth 1 && git clone https://github.com/stormmurdoc/nvchad-custom-config \
+~/.config/nvim/lua/custom --depth 1 && nvim
+```
+
+For windows:
+
+```shell
+git clone https://github.com/NvChad/NvChad $HOME\AppData\Local\nvim \
+--depth 1 && git clone https://github.com/stormmurdoc/nvchad-custom-config \
+$HOME\AppData\Local\nvim\lua\custom --depth 1 && nvim
+```
+
+## Links
 
 * [telescope](https://github.com/nvim-telescope/telescope.nvim)
 * [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
