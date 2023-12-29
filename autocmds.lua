@@ -130,7 +130,11 @@ autocmd("FileType", {
 -- automatic perform a shellcheck if a shell scrippt is written
 vim.cmd [[
    autocmd FileType sh autocmd BufWritePre <buffer> ! shellcheck %
-]]--
+]]
+
+vim.cmd [[
+   autocmd BufWritePost *md !markdown-toc -i %
+]]
 
 vim.cmd [[
    autocmd BufWritePost ~/.local/bin/* !shellcheck %
