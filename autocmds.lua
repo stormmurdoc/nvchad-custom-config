@@ -170,9 +170,9 @@ vim.cmd [[
    autocmd BufWritePost *md !markdown-toc -i %
 ]]
 
-vim.cmd [[
-   autocmd BufWritePost ~/.local/bin/* !shellcheck %
-]]
+-- vim.cmd [[
+--    autocmd BufWritePost ~/.local/bin/* !shellcheck %
+-- ]]
 
 -- execute xrdb if a Xresources file is written
 vim.cmd [[
