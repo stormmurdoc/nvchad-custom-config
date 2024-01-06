@@ -30,7 +30,7 @@ repos:
         exclude: binary|\.bin$|public|themes
 
   - repo: https://github.com/jameswoolfenden/pre-commit-shell
-    rev: v1.0.6
+    rev: 0.0.2
     hooks:
       - id: shell-lint
         exclude: template|\.template$
@@ -46,3 +46,8 @@ repos:
     rev: v8.18.1
     hooks:
       - id: gitleaks
+
+  - repo: https://github.com/JohnnyMorganz/StyLua
+    rev: v0.19.1
+    hooks:
+      - id: stylua
