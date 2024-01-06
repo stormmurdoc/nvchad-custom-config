@@ -12,20 +12,20 @@ local plugins = {
       {
         "jose-elias-alvarez/null-ls.nvim",
         config = function()
-          require "custom.configs.null-ls"
+          require("custom.configs.null-ls")
         end,
       },
     },
     config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.configs.lspconfig"
+      require("plugins.configs.lspconfig")
+      require("custom.configs.lspconfig")
     end, -- Override to setup mason-lspconfig
   },
 
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = overrides.mason,
   },
 
   {
@@ -47,43 +47,46 @@ local plugins = {
     end,
   },
 
- ----------------------------- custom plugins ---------------------------------
+  ----------------------------- custom plugins ---------------------------------
 
- -- vimwiki
+  -- vimwiki
   {
     "vimwiki/vimwiki",
-    lazy=false,
+    lazy = false,
     init = function()
-        vim.g.vimwiki_list = {
-            {
-            path = '~/ownCloud/vimwiki/',
-            syntax = 'markdown',
-            ext = '.md',
-            },
-        }
-        vim.g.vimwiki_ext2syntax = {
-          ['.md'] = 'markdown',
-          ['.markdown'] = 'markdown',
-          ['.mdown'] = 'markdown' }
-        vim.g.vimwiki_use_mouse = 1
-        vim.g.vimwiki_markdown_link_ext = 1
+      vim.g.vimwiki_list = {
+        {
+          path = "~/ownCloud/vimwiki/",
+          syntax = "markdown",
+          ext = ".md",
+        },
+      }
+      vim.g.vimwiki_ext2syntax = {
+        [".md"] = "markdown",
+        [".markdown"] = "markdown",
+        [".mdown"] = "markdown",
+      }
+      vim.g.vimwiki_use_mouse = 1
+      vim.g.vimwiki_markdown_link_ext = 1
     end,
   },
 
   {
     "iamcco/markdown-preview.nvim",
-    cmd = {"MarkdownPreview", "MarkdownPreviewStop"},
+    cmd = { "MarkdownPreview", "MarkdownPreviewStop" },
     lazy = false,
-    build = function() vim.fn["mkdp#util#install"]() end,
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
     init = function()
-        vim.g.mkdp_theme = 'dark'
-    end
+      vim.g.mkdp_theme = "dark"
+    end,
   },
 
   {
     "stsewd/gx-extended.vim",
-    lazy=true,
-  }
+    lazy = true,
+  },
 
   -- To make a plugin not be loaded
   -- {

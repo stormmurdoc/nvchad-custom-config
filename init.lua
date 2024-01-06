@@ -15,11 +15,11 @@
 --     end, vim.t.bufs)
 --   end,
 -- })
-require "custom.autocmds"
-require "custom.mappings"
-require "custom.abbreviations"
-require "custom.options"
+require("custom.autocmds")
+require("custom.mappings")
+require("custom.abbreviations")
+require("custom.options")
 
-vim.filetype.add { extension = { hcl = "terraform" } }
+vim.filetype.add({ extension = { hcl = "terraform" } })
 vim.g.snipmate_snippets_path = "~/.config/nvim/lua/custom/snippets"
 vim.g.vscode_snippets_path = "~/.config/nvim/lua/custom/vscode_snippets"

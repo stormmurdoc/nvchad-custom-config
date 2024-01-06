@@ -1,4 +1,3 @@
-
 -- lua/custom/options
 
 local opt = vim.opt
@@ -6,19 +5,19 @@ local opt = vim.opt
 opt.termguicolors = true
 
 -- Enable syntax highlight
-vim.cmd "syntax enable"
+vim.cmd("syntax enable")
 
 -- Enable filetype plugins
-vim.cmd [[
+vim.cmd([[
   filetype on
   filetype plugin on
   filetype indent on
-]]
+]])
 
 -- Disable folder in diff mode
-vim.cmd [[
+vim.cmd([[
   set diffopt+=context:99999,foldcolumn:0
-]]
+]])
 
 -- Change blankline context character
 vim.g.indent_blankline_context_char = "│"

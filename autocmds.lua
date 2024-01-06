@@ -159,42 +159,40 @@ autocmd("FileType", {
   end,
 })
 
-
-
 -- automatic perform a shellcheck if a shell scrippt is written
-vim.cmd [[
+vim.cmd([[
    autocmd FileType sh autocmd BufWritePre <buffer> ! shellcheck %
-]]
+]])
 
-vim.cmd [[
+vim.cmd([[
    autocmd BufWritePost *md !markdown-toc -i %
-]]
+]])
 
 -- vim.cmd [[
 --    autocmd BufWritePost ~/.local/bin/* !shellcheck %
 -- ]]
 
 -- execute xrdb if a Xresources file is written
-vim.cmd [[
+vim.cmd([[
    autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
-]]
+]])
 
 -- execute hadolint
-vim.cmd [[
+vim.cmd([[
    autocmd BufWritePost *Dockerfile !hadolint %
-]]
+]])
 
-vim.cmd [[
+vim.cmd([[
    autocmd BufWritePost *.desktop !desktop-file-validate %
-]]
+]])
 
 -- clear tex files after closing vim
-vim.cmd [[
+vim.cmd([[
    autocmd VimLeave *.tex !texclear %
-]]
+]])
 
 -- templates
-vim.cmd [[
+vim.cmd([[
   autocmd BufNewFile brief.tex 0r ~/.config/templates/brief.tex
   autocmd BufNewFile *.dot 0r ~/.config/templates/template.dot
   autocmd BufNewFile *.sh 0r ~/.config/templates/template.sh
@@ -202,28 +200,27 @@ vim.cmd [[
   autocmd BufNewFile *.c 0r ~/.config/templates/template.c
   autocmd BufNewFile brief.tex 0r ~/.config/templates/brief.tex
   autocmd BufNewFile doc.tex 0r ~/.config/templates/template.tex
-]]
+]])
 
 -- Automatically deletes all trailing whitespace on save.
-vim.cmd [[
+vim.cmd([[
   autocmd BufWritePre * %s/\s\+$//e
-]]
-
+]])
 
 -- move visual block vertically
-vim.cmd [[
+vim.cmd([[
   xnoremap J :m '>+1<CR>gv=gv
   xnoremap K :m '<-2<CR>gv=gv
-]]
+]])
 
 -- fast replace strings
-vim.cmd [[
+vim.cmd([[
   nmap <leader>r :%s/<C-r><C-w>//gc<Left><Left><Left>
-]]
+]])
 
 -- vimwiki au group
 
-vim.cmd [[
+vim.cmd([[
   augroup vimwikigroup
    autocmd!
    " automatically update links on read diary
@@ -231,4 +228,4 @@ vim.cmd [[
   augroup end
 
   au BufNewFile ~/ownCloud/vimwiki/diary/*.md :silent 0r !~/.config/vim/bin/generate-vimwiki-diary-template '%'
-]]
+]])

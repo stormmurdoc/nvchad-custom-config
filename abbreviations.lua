@@ -1,6 +1,6 @@
 -- Abbreviations
 -- no one is really happy until you have this shortcuts
-vim.cmd [[
+vim.cmd([[
   cnoreabbrev W! w!
   cnoreabbrev Q! q!
   cnoreabbrev Qa qa
@@ -13,4 +13,4 @@ vim.cmd [[
   cnoreabbrev W w
   cnoreabbrev Q q
   cnoreabbrev Qall qall
-]]
+]])
