@@ -164,6 +164,11 @@ vim.cmd([[
    autocmd FileType sh autocmd BufWritePre <buffer> ! shellcheck %
 ]])
 
+-- set hurl files
+vim.cmd([[
+   autocmd BufRead,BufNewFile *.hurl setlocal filetype=hurl
+]])
+
 vim.cmd([[
    autocmd BufWritePost *md !markdown-toc -i %
 ]])
