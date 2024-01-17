@@ -23,6 +23,13 @@ M.general = {
       end,
       "toggle transparency",
     },
+    ["<leader><ENTER>"] = {
+      function()
+        vim.cmd([[
+          :ZenMode
+        ]])
+      end, "Toggle ZenMode"
+    },
   },
   v = {
     [">"] = { ">gv", "indent" },
