@@ -13,6 +13,9 @@ local sources = {
 
   -- cpp
   b.formatting.clang_format,
+
+    -- diagnostic markdown
+  b.diagnostics.markdownlint,
 }
 
 null_ls.setup({
