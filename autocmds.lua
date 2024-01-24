@@ -100,6 +100,7 @@ autocmd("FileType", {
     opt.softtabstop = 4
     opt.expandtab = true
     opt.smarttab = true
+    opt.filetype = "markdown"
   end,
 })
 
