@@ -32,8 +32,10 @@ M.general = {
     },
     ["<leader>gg"] = {
       function()
-        local term = require("nvterm.terminal").new("float")
-        vim.api.nvim_chan_send(term.job_id, "lazygit\n")
+        local nvterm = require("nvterm.terminal")
+        nvterm.send("lazygit && exit", "float")
+        nvterm.toggle "float"
+        nvterm.toggle "float"
       end, "open Lazygit",
     },
   },
