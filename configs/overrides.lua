@@ -16,7 +16,6 @@ M.treesitter = {
     "markdown",
     "markdown_inline",
     "python",
-    "terraform",
   },
   indent = {
     enable = true,
@@ -44,6 +43,7 @@ M.mason = {
     "markdown-toc",
     "markdownlint",
     "prettier",
+    "pyre",
     "shellcheck",
     "stylua",
     "terraform-ls",
