@@ -1,4 +1,5 @@
 # NvChad Custom Config
+<!-- toc -->
 
 This can be used as an example custom config for NvChad.
 Do check the [https://github.com/NvChad/nvcommunity
@@ -43,8 +44,6 @@ git clone https://github.com/NvChad/NvChad $HOME\AppData\Local\nvim \
 --depth 1 && git clone https://github.com/stormmurdoc/nvchad-custom-config \
 $HOME\AppData\Local\nvim\lua\custom --depth 1 && nvim
 ```
-
-Further information can be found [here](https://nvchad.com/docs/quickstart/install).
 
 ## Links
 
