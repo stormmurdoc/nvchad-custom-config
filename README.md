@@ -44,6 +44,8 @@ git clone https://github.com/NvChad/NvChad $HOME\AppData\Local\nvim \
 $HOME\AppData\Local\nvim\lua\custom --depth 1 && nvim
 ```
 
+Further information can be found [here](https://nvchad.com/docs/quickstart/install).
+
 ## Links
 
 - [telescope](https://github.com/nvim-telescope/telescope.nvim)
