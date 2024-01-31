@@ -65,7 +65,8 @@ M.mdpreview = {
 
 M.gitsigns = {
   n = {
-    ["<leader>gp"] = { "<cmd> Gitsigns preview_hunk<CR>", "Gitsigns Preview Hunk" },
+    ["<leader>gp"] = { "<cmd> Gitsigns preview_hunk<CR>", "Preview Hunk" },
+    ["<leader>gt"] = { "<cmd> Gitsigns toggle_current_line_blame<CR>", "Toggle current line blame" },
   },
 }
 -- more keybinds!
