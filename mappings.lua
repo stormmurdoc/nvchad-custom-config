@@ -62,6 +62,12 @@ M.mdpreview = {
     ["<leader>mc"] = { "<cmd> MarkdownPreviewStop<CR>", "Close Preview" },
   },
 }
+
+M.gitsigns = {
+  n = {
+    ["<leader>gp"] = { "<cmd> Gitsigns preview_hunk<CR>", "Gitsigns Preview Hunk" },
+  },
+}
 -- more keybinds!
 
 return M
