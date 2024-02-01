@@ -15,6 +15,7 @@ M.treesitter = {
     "python",
     "tsx",
     "typescript",
+    "terraform",
     "vim",
     "vimdoc",
   },

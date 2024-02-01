@@ -20,7 +20,7 @@ if [ "${DAY}" -ge 1 ] && [ "${DAY}" -le 5 ];then
 - [ ] Einstempeln
 - [ ] Emails lesen
 - [ ] Pause machen
-$(grep -E "\- \[ \]" "/home/murdoc/ownCloud/vimwiki/work/WorkTodo.md")
+$(grep -E "\- \[ \]" "/home/murdoc/ownCloud/vimwiki/work/WorkTodo.md")\
 - [ ] Ausstempeln
 $(echo "$DAY_OUT")
 ")
