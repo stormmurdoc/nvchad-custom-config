@@ -19,6 +19,7 @@ M.ui = {
     separator_style = "round",
     overriden_modules = nil,
   },
+  telescope = { style = "bordered" },
   nvdash = {
     load_on_startup = true,
     header = {
