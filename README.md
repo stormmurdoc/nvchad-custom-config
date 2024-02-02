@@ -64,3 +64,4 @@ Further information can be found [here](https://nvchad.com/docs/quickstart/insta
 - [Comment.nvim](https://github.com/numToStr/Comment.nvim)
 - [mason.nvim](https://github.com/williamboman/mason.nvim)
 - [https://github.com/sar/friendly-snippets.nvim](https://github.com/sar/friendly-snippets.nvim)
+- [LSP config overview](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ansiblels)
