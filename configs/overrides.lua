@@ -46,6 +46,7 @@ M.mason = {
     "markdownlint",
     "prettier",
     "pyre",
+    "pyright",
     "shellcheck",
     "stylua",
     "terraform-ls",
