@@ -18,7 +18,6 @@ local servers =
     "pyright",
     "terraformls",
     "tflint",
-    "trivy",
     "tsserver",
     "yamlls",
   }
