@@ -160,11 +160,6 @@ autocmd("FileType", {
   end,
 })
 
--- automatic perform a shellcheck if a shell scrippt is written
-vim.cmd([[
-   autocmd FileType sh autocmd BufWritePre <buffer> ! shellcheck %
-]])
-
 -- set hurl files
 vim.cmd([[
    autocmd BufRead,BufNewFile *.hurl setlocal filetype=hurl
