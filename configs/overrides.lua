@@ -9,6 +9,7 @@ M.treesitter = {
     "html",
     "hurl",
     "javascript",
+    "latex",
     "lua",
     "markdown",
     "markdown_inline",
