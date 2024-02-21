@@ -38,6 +38,23 @@ M.general = {
         nvterm.toggle "float"
       end, "open Lazygit",
     },
+
+    ["<leader>mm"] = {
+      function ()
+        vim.cmd([[
+          :MarkmapWatch
+        ]])
+      end, "Open Markmap Watch",
+    },
+
+    ["<leader>ms"] = {
+      function ()
+        vim.cmd([[
+          :MarkmapWatchStop
+        ]])
+      end, "Stop Markmap Watch",
+    },
+
   },
   v = {
     [">"] = { ">gv", "indent" },
