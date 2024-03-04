@@ -55,7 +55,20 @@ M.general = {
       end, "Stop Markmap Watch",
     },
 
-  },
+
+    ["<leader>l"] = {
+      function ()
+          require("cmp").setup { enabled = true }
+      end, "Enable LSP completion",
+    },
+
+    ["<leader>L"] = {
+      function ()
+          require("cmp").setup { enabled = false }
+      end, "Disable LSP completion",
+    },
+},
+
   v = {
     [">"] = { ">gv", "indent" },
   },
