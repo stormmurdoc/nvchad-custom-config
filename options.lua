@@ -107,7 +107,7 @@ opt.si = true
 -- Disable line wrapping
 opt.wrap = false
 -- Keep lines below cursor when scrolling
-opt.scrolloff = 2
+opt.scrolloff = 8
 opt.sidescrolloff = 5
 -- Don't use temp files
 opt.backup = false
