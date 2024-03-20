@@ -37,6 +37,8 @@ opt.history = 1000
 opt.foldenable = false
 -- Show line numbers
 opt.number = true
+-- Show relative numbers
+opt.relativenumber = true
 -- Turn on the wild menu
 opt.wildmenu = true
 -- Always show current postion
