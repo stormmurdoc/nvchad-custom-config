@@ -56,6 +56,14 @@ M.general = {
     },
 
 
+    ["<leader>ft"] = {
+      function ()
+        vim.cmd([[
+          :%!fold -w 76
+        ]])
+      end, "Fold text to 76 characters",
+    },
+
     ["<leader>l"] = {
       function ()
           require("cmp").setup { enabled = true }
